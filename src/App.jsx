@@ -1,4 +1,4 @@
-import {Card,Button,Greeting,Badge} from "./components"
+import {Card,Button,Greeting,Badge} from "@components"
 export default function App(){
   return (
     <div>
