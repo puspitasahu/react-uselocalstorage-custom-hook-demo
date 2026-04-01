@@ -1,15 +1,14 @@
-import {Card,Button,Greeting,Badge} from "@components"
+import useLocalStorage from "./shared/useLocalStorage";
+
 export default function App(){
+  const [theme,setTheme] = useLocalStorage("theme", "light")
   return (
     <div>
-      <h1>Barrel Demo</h1>
-      <Badge text="New"/>
-      <Card title="Welcome">
-        <Greeting name="Lily"/> 
-      </Card>
-      <Card title = "Actions">
-        <Button label="Click Me" onClick = { () => alert('Hello')}></Button>
-      </Card>
+      <h1>Current Theme {theme}</h1>
+      <button onClick= { () => setTheme("dark")}>Dark Theme</button> 
+      <br/>
+      <br/>
+      <button onClick= { () => setTheme("light")}>Light Theme</button>     
     </div>
   )
 }
